@@ -18,7 +18,8 @@ $settings['trusted_host_patterns'] = [
 /**
  * database settings
  */
-$databases['default']['default'] = array (
+
+$databases['test']['default'] = array (
   'database' => 'DBNAME',
   'username' => 'DBUSER',
   'password' => 'DBPSWD',
@@ -31,3 +32,14 @@ $databases['default']['default'] = array (
     'isolation_level' => 'SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED',
   ],
 );
+
+$databases['default']['default'] = array (
+  'database' => 'sites/default/files/.ht.sqlite',
+  'prefix' => '',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\sqlite',
+  'driver' => 'sqlite',
+);
+
+
+$settings['config_sync_directory'] = 'sites/default/files/config_MUIfMBFA6vLi3C4Q9SWBIXSt26LzjMrFppWmrAbIkDmByB0rbfombIqMU6GkfuH32WEKMAG0zw/sync';
+
