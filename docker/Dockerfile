@@ -27,7 +27,7 @@ RUN locale-gen en_US.UTF-8 && \
     apt-get update && \
     apt-get install -y curl git vim mysql-client unzip \
                    apache2 libapache2-mod-php7.3 \
-                   php8.2-cli php7.3-curl php7.3-gd php7.3-mbstring php7.3-mysql php7.3-opcache php7.3-pgsql php7.3-sqlite3 php7.3-xml php7.3-yaml php7.3-zip && \
+                   php7.3-cli php7.3-curl php7.3-gd php7.3-mbstring php7.3-mysql php7.3-opcache php7.3-pgsql php7.3-sqlite3 php7.3-xml php7.3-yaml php7.3-zip && \
     apt-get clean
 
 # set time
