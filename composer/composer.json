@@ -15,13 +15,14 @@
         }
     ],
     "require": {
-        "composer/installers": "^2.0",
-        "drupal/core-composer-scaffold": "8.9.20",
-        "drupal/core-project-message": "8.9.20",
-        "drupal/core-recommended": "8.9.20",
+        "composer/installers": "^1.2",
+        "drupal/core-composer-scaffold": "^8.9",
+        "drupal/core-project-message": "^8.9",
+        "drupal/core-recommended": "^8.9",
+        "drupal/matomo": "^1.9",
         "drupal/webform": "^6.0",
-        "drupal/smtp": "^1.2",
-        "drush/drush": "^9.7"
+        "drush/drush": "^10.1",
+        "drupal/jquery_ui_datepicker": "*"
     },
     "conflict": {
         "drupal/drupal": "*"
