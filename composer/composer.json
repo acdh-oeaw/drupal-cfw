@@ -21,7 +21,6 @@
         "drupal/core-recommended": "^8.9",
         "drupal/matomo": "^1.9",
         "drupal/webform": "^6.0",
-        "drupal/webform_views": "^8.0",
         "drush/drush": "^10.1",
         "drupal/jquery_ui_datepicker": "*"
     },
