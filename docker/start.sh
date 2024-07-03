@@ -53,8 +53,6 @@ fi
 # chown -R www-data:www-data /var/www/drupal/html/web/sites/default/
 # sudo chown -R 1000:1000 /var/www/drupal/
 
-cp /backup/.ht.sqlite /var/www/drupal/html/site/default/files/.ht.sqlite
-
 sudo apache2ctl -D FOREGROUND
 
 #source /etc/apache2/envvars && exec /usr/sbin/apache2 -D FOREGROUND
