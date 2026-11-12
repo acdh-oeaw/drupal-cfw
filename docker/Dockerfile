@@ -20,15 +20,27 @@ RUN apt-get update && \
     && chmod 0440 /etc/sudoers.d/$UNAME \
     && apt-get clean
 
-# install languages and php install
+# Install languages and latest available PHP 7.3 packages
+# Change PHP_CACHE_BUST to force a fresh installation layer
+ARG PHP_CACHE_BUST=20261112
+
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en
-RUN locale-gen en_US.UTF-8 && \
-    locale-gen de_DE.UTF-8 && \
-    apt-get update && \
-    apt-get install -y curl git vim mysql-client unzip \
-                   apache2 libapache2-mod-php7.3 \
-                   php7.3-cli php7.3-curl php7.3-gd php7.3-mbstring php7.3-mysql php7.3-opcache php7.3-pgsql php7.3-sqlite3 php7.3-xml php7.3-yaml php7.3-zip && \
-    apt-get clean
+
+RUN echo "PHP rebuild: ${PHP_CACHE_BUST}" \
+    && locale-gen en_US.UTF-8 \
+    && locale-gen de_DE.UTF-8 \
+    && apt-get update \
+    && apt-get install -y \
+        curl git vim mysql-client unzip \
+        apache2 libapache2-mod-php7.3 \
+        php7.3-cli php7.3-curl php7.3-gd \
+        php7.3-mbstring php7.3-mysql \
+        php7.3-opcache php7.3-pgsql \
+        php7.3-sqlite3 php7.3-xml \
+        php7.3-yaml php7.3-zip \
+    && dpkg-query -W php7.3-cli libapache2-mod-php7.3 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # set time
 RUN rm -f /etc/localtime && \
