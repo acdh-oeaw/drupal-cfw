@@ -90,9 +90,8 @@ COPY ./custom/themes/ /var/www/drupal/html/web/themes/custom/
 RUN cd /var/www/drupal/html \
 #    && chown -R www-data:www-data /var/www/drupal/composer/composer.json \
     && ln -s /var/www/drupal/composer/composer.json composer.json \
-    && php -v \
-    && composer --version \
-    && composer install --no-interaction -vvv
+    && ln -s /var/www/drupal/composer/composer.lock composer.lock \
+    && composer install --no-interaction --prefer-dist
 #    && composer install
 #    && chown -R www-data:www-data /var/www/drupal \
 #    && runuser -u www-data -- composer install
